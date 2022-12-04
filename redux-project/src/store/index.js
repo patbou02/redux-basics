@@ -5,29 +5,34 @@ const initialState = {
   showCounter: true
 };
 
+export const INCREMENT = 'increment';
+export const DECREMENT = 'decrement';
+export const INCREMENTBY = 'incrementby';
+export const TOGGLE = 'toggle';
+
 const counterReducer = (state = initialState, action) => {
-  if (action.type === 'increment') {
+  if (action.type === INCREMENT) {
     return {
       counter: state.counter + 1,
       showCounter: state.showCounter
     };
   }
 
-  if (action.type === 'decrement') {
+  if (action.type === DECREMENT) {
     return {
       counter: state.counter - 1,
       showCounter: state.showCounter
     };
   }
 
-  if (action.type === 'incrementbyfive') {
+  if (action.type === INCREMENTBY) {
     return {
       counter: state.counter + action.amount,
       showCounter: state.showCounter
     };
   }
 
-  if (action.type === 'toggle') {
+  if (action.type === TOGGLE) {
     return {
       counter: state.counter,
       showCounter: !state.showCounter

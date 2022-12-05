@@ -7,19 +7,11 @@ const Counter = () => {
   const counter = useSelector(state => state.counter.counter);
   const show = useSelector(state => state.counter.showCounter);
 
-  const toggleCounterHandler = () => {
-    dispatch(counterActions.toggle());
-  };
+  const toggleCounterHandler = () => dispatch(counterActions.toggle());
 
-  const incrementHandler = () => {
-    dispatch(counterActions.increment());
-  };
-  const decrementHandler = () => {
-    dispatch(counterActions.decrement());
-  };
-  const incrementByHandler = amount => {
-    dispatch(counterActions.incrementby(amount)); // { type: SOME_UNIQUE_IDENTIFIER, payload: 10 }
-  };
+  const incrementHandler = () => dispatch(counterActions.increment());
+  const decrementHandler = () => dispatch(counterActions.decrement());
+  const incrementByHandler = amount => dispatch(counterActions.incrementby(amount)); // { type: SOME_UNIQUE_IDENTIFIER, payload: 10 }
 
   return (
     <main className={classes.counter}>
